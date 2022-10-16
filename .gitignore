@@ -3,3 +3,8 @@ SpringJPA/.mvn/
 SpringJPA/mvnw
 SpringJPA/mvnw.cmd
 SpringJPA/pom.xml
+
+ SpringJPARepo/.mvn/
+ SpringJPARepo/mvnw
+ SpringJPARepo/mvnw.cmd
+ SpringJPARepo/pom.xml

@@ -35,9 +35,9 @@ public class SpringJpaRepoApplication {
 //		List<BookShop> list = bean.findByBookPrice(450);
 //		System.out.println(list);
 		
+//		bean.deleteBookByName("Numbers Dont Lie");
 		
-		bean.deleteBookByName("Numbers Dont Lie");
-		
+//		bean.updateById(2, "Secret");
 		
 		
 	}

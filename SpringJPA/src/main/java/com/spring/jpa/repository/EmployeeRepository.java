@@ -7,5 +7,6 @@ import com.spring.jpa.entity.Employee;
 
 @Repository
 public interface EmployeeRepository extends CrudRepository<Employee, Integer>{
+	
 
 }

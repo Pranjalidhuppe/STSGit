@@ -26,7 +26,7 @@ public interface IBookRepo extends JpaRepository<BookShop, Integer >{
 	public List<BookShop> findAllBooks();
 	
 	@Query("From BookShop where Book_Name = ?1")
-	public List<BookShop> findByBookName(String name);
+	public BookShop findByBookName(String name);
 	
 	@Query("From BookShop where Book_ID = ?1")
 	public void deleteBookById(Integer id);
@@ -35,6 +35,9 @@ public interface IBookRepo extends JpaRepository<BookShop, Integer >{
 	@Modifying
 	@Query("delete From BookShop where Book_Name = :name")
 	public void deleteBookByName(String name);
+	
+	@Query("From BookShop")
+	public void updateById(Integer id , String name );
 	
 	@Query("From BookShop")
 	public void deleteAllBooks();

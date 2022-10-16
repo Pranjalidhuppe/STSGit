@@ -42,8 +42,8 @@ public class BookServiceImpl implements IBookService{
 	}
 
 	@Override
-	public List<BookShop>findByBookName(String name) {
-		List<BookShop> bookName = repository.findByBookName(name);
+	public BookShop findByBookName(String name) {
+		BookShop bookName = repository.findByBookName(name);
 
 		return bookName;
 	}
@@ -101,6 +101,13 @@ public class BookServiceImpl implements IBookService{
 	@Override
 	public void deleteAllBooks() {
 		repository.deleteAllBooks();
+		
+	}
+	@Override
+	public void updateById(Integer id, String name) {
+		BookShop shop = repository.findById(id).orElse(null);
+		shop.setBookName(name);
+		repository.save(shop);
 		
 	}
 	

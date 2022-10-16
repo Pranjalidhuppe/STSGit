@@ -29,10 +29,10 @@ public interface IBookService {
 
 	public List<BookShop> findByBookPrice(Integer price);
 
-	public List<BookShop> findByBookName(String name);
+	public BookShop findByBookName(String name);
 
 	public List<BookShop> findBybookPriceandbookName(Integer price , String name);
 	
-	
+	public void updateById(Integer id , String name );
 
 }
