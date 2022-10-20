@@ -14,7 +14,7 @@ public class SpringJpaApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(SpringJpaApplication.class, args);
 		EmployeeServiceImpl bean = context.getBean(EmployeeServiceImpl.class);
 		
-		Employee emp = new Employee("Pranjali", "Mumbai");
+		Employee emp = new Employee("Pranjali", "Mumbai" );
 		
 		bean.saveEmp(emp);
 	}

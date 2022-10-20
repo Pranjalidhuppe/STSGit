@@ -18,9 +18,11 @@ public class Employee {
 	String name;
 @Column
 	String city;
+
 public Integer getId() {
 	return id;
 }
+
 public void setId(Integer id) {
 	this.id = id;
 }
@@ -36,23 +38,27 @@ public String getCity() {
 public void setCity(String city) {
 	this.city = city;
 }
+
+
+
 @Override
 public String toString() {
 	return "Employee [id=" + id + ", name=" + name + ", city=" + city + "]";
 }
 
-
 public Employee() {
 	super();
 }
-
 
 public Employee(String name, String city) {
 	super();
 	this.name = name;
 	this.city = city;
+	
 }
-    
+
+
+
      
 
 

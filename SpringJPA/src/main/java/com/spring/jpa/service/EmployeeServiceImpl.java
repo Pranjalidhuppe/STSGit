@@ -3,6 +3,7 @@ package com.spring.jpa.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.jpa.entity.Employee;
@@ -11,7 +12,7 @@ import com.spring.jpa.repository.EmployeeRepository;
 public class EmployeeServiceImpl implements EmployeeService{
 	
 	private final EmployeeRepository repository;
-	
+	@Autowired
 	public EmployeeServiceImpl(EmployeeRepository repository ) {
 		this.repository = repository;
 	}
@@ -53,5 +54,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 	public void deleteAll() {
 		repository.deleteAll();
 	}
+
 
 }
