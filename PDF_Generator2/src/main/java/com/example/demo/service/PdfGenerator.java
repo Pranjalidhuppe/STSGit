@@ -59,15 +59,15 @@ public class PdfGenerator {
 
 		pc.setPhrase(new Phrase("id", font));
 
-		//pTable.addCell(pc);
+		pTable.addCell(pc);
 
 		pc.setPhrase(new Phrase("Name", font));
 		
-		//pTable.addCell(pc);
+		pTable.addCell(pc);
 		
 		pc.setPhrase(new Phrase("Departent", font));
 		
-		//pTable.addCell(pc);
+		pTable.addCell(pc);
 		
 		pc.setPhrase(new Phrase("salary", font));
 		
