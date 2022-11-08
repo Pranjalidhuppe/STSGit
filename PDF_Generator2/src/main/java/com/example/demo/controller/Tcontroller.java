@@ -8,7 +8,11 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -33,10 +37,22 @@ public class Tcontroller {
 
 	@Autowired
 	private IService serviceimpl;
+	private static final Logger LOG = LoggerFactory.getLogger(Tcontroller.class);
 
-	@GetMapping("/{id}")
-	public Teacher getbyId(@PathVariable Integer id) {
-		return serviceimpl.getByid(id);
+	@GetMapping("/{id}")	
+	public ResponseEntity<Teacher> getbyId(@PathVariable Integer id) {
+		LOG.info("getById Method is called");
+
+		Teacher teacher = serviceimpl.getByid(id);
+		if(teacher!=null) {
+			LOG.info("getById Method is executed");
+			return ResponseEntity.ok(teacher);
+			
+		} else {
+			LOG.error("Teacher with Id is not found");
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			//throw new ResourceNotFoundException("Employee not found with id ::"+id);
+		}
 	}
 
 	@PostMapping("/save")
