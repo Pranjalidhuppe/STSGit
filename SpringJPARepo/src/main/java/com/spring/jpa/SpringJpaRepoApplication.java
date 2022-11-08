@@ -30,12 +30,13 @@ public class SpringJpaRepoApplication {
 //		List<BookShop> bookName = bean.findBybookIdandbookName(3, "Numbers Dont Lie");
 //		
 		
-//		List<BookShop> allbooks = bean.findAllbooks();
+		List<BookShop> allbooks = bean.findAllbooks();
+		System.out.println(allbooks);
 		
 //		List<BookShop> list = bean.findByBookPrice(450);
 //		System.out.println(list);
 		
-//		bean.deleteBookByName("Numbers Dont Lie");
+		bean.deleteBookByName("Secret");
 		
 //		bean.updateById(2, "Secret");
 		
