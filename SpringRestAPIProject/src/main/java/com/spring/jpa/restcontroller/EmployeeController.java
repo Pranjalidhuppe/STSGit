@@ -3,6 +3,8 @@ package com.spring.jpa.restcontroller;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,7 @@ import com.spring.jpa.service.EmployeeService;
 @RestController
 @RequestMapping("/emp")
 public class EmployeeController {
+	private static final Logger Log = LoggerFactory.getLogger(EmployeeController.class);
 
 	@Autowired
 	private EmployeeService service;
@@ -34,6 +37,7 @@ public class EmployeeController {
 
 	@GetMapping("/empid/{id}")
 	public Employee getEmpById(Integer id) {
+		Log.info("getEmpById method called");
 		return service.getEmpById(id);
 	}
 
